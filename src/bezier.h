@@ -3,8 +3,9 @@
 #include <avr/io.h>
 #include "bresenham.h"
 #include "bezier.h"
-#include "wu.h"
 #include <stdlib.h>
+#include <math.h>
+#include "unifiedColor.h"
 
  /*{Small Graphics library for the LaFortuna}
     Copyright (C) {2016}  {Nicholas Bishop}
@@ -25,6 +26,7 @@
 /*The bezier library is a library for drawing simple curves. This library is an implementation of cubic bezier curves, please note that b-splines are not
 supported.*/
 
+/* A library for drawing anti-aliased lines using wu's algorithm */
 
 /* Auxillary function for drawing bezier curves */
 int16_t findBezier(double t, uint16_t x[4]);
@@ -49,4 +51,23 @@ generated. All line segments are not drawn on the screen until all line segment 
 between the curve appearing on the screen and the function being called, but the curve will display all at once instead of line segment by line segment
 like when plotBezier is used. This has memory implications and requires 4*(1/segSize) bytes of memory that plotBezier does not need */
 void plotBezierBuffer(uint16_t x[4], uint16_t y[4], uint16_t col, double segSize);
+
+
+/* auxillary functions for drawAAline */
+double fraction(double val);
+double remainingFraction(double val);
+void swapDouble(double *x, double *y);
+
+/* This function is used for drawing anti-aliased lines. Lines are drawn using Xiaolin Wu's algorithm so take slightly longer to load than lines drawn
+using bresenham's algorithm.
+
+Parameters:
+x0 - The  coordinate of the start point of the line
+y0 - The y coordinate of the start point of the line
+x1 - The x coordinate of the end point of the line
+y1 - The y coordinate of the end point of the line
+col - The color of the line in svgrgb565 format*/
+void drawAALine(double x0, double y0, double x1, double y1, uint16_t col);
+
+
 #endif

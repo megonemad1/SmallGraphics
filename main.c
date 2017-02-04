@@ -6,7 +6,6 @@
 #include <avr/interrupt.h>
 #include "unifiedColor.h"
 #include "bezier.h"
-#include "wu.h"
 
  /*{Small Graphics library for the LaFortuna}
     Copyright (C) {2016}  {Nicholas Bishop}
