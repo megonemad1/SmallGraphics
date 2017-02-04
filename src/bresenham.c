@@ -16,9 +16,6 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-void init_bres() {
-	init_lcd();
-}
 
 
 void drawLine(int16_t x1, int16_t y1, int16_t x2, int16_t y2, uint16_t col) {

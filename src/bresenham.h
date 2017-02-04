@@ -28,8 +28,7 @@
 /* The bresenham library provides an efficient way of drawing lines using the bresenham algorithm. The bresenham library
 also provides an efficient function for drawing circles, based off the midpoint circle algorithm. */
 
-/* Initialising function that initialises the LCD screen */
-void init_bres();
+
 
 /* Draws a straight line on the screen using bresenham's line algorithm 
 
