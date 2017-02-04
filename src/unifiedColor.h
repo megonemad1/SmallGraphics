@@ -1,5 +1,53 @@
-/* SVG Color Names mapped to 16bit RGB
-   with 5-6-5 bit allocation:
+#ifndef unifiedColor_h
+#define unifiedColor_h
+#include <math.h>
+#include "unifiedColor.h"
+#include <avr/io.h>
+
+/*========================================================================\
+|  The MIT License (MIT)                                                  |
+|                                                                         |
+|  Copyright (c) 2015 Klaus-Peter Zauner                                  |
+|                                                                         |
+|  Permission is hereby granted, free of charge, to any person            |
+|  obtaining a copy of this software and associated documentation files   |
+|  (the "Software"), to deal in the Software without restriction,         |
+|  including without limitation the rights to use, copy, modify, merge,   |
+|  publish, distribute, sublicense, and/or sell copies of the Software,   |
+|  and to permit persons to whom the Software is furnished to do so,      |
+|  subject to the following conditions:                                   |
+|                                                                         |
+|  The above copyright notice and this permission notice shall be         |
+|  included in all copies or substantial portions of the Software.        |
+|                                                                         |
+|  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,        |
+|  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF     |
+|  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND                  |
+|  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS    |
+|  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN     |
+|  ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN      |
+|  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE       |
+|  SOFTWARE.                                                              |
+|                                                                         |
+\=========================================================================/
+    {Small Graphics library for the LaFortuna}
+    Copyright (C) {2016}  {Nicholas Bishop}
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+
+    SVG Color Names mapped to 16bit RGB
+    with 5-6-5 bit allocation:
 
       | Red   | Green | Blue  |
       |-------+-------+-------|
@@ -159,32 +207,27 @@
 #define WHITE_SMOKE             0xF79E
 #define YELLOW                  0xFFE0
 
-/*========================================================================\
-|  The MIT License (MIT)                                                  |
-|                                                                         |
-|  Copyright (c) 2015 Klaus-Peter Zauner                                  |
-|                                                                         |
-|  Permission is hereby granted, free of charge, to any person            |
-|  obtaining a copy of this software and associated documentation files   |
-|  (the "Software"), to deal in the Software without restriction,         |
-|  including without limitation the rights to use, copy, modify, merge,   |
-|  publish, distribute, sublicense, and/or sell copies of the Software,   |
-|  and to permit persons to whom the Software is furnished to do so,      |
-|  subject to the following conditions:                                   |
-|                                                                         |
-|  The above copyright notice and this permission notice shall be         |
-|  included in all copies or substantial portions of the Software.        |
-|                                                                         |
-|  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,        |
-|  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF     |
-|  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND                  |
-|  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS    |
-|  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN     |
-|  ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN      |
-|  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE       |
-|  SOFTWARE.                                                              |
-|                                                                         |
-\========================================================================*/
 
+#endif
+
+
+
+/* auxillary functions for shade */
+uint16_t getGreen(uint16_t rgb);
+uint16_t getRed(uint16_t rgb);
+uint16_t getBlue(uint16_t rgb);
+uint16_t compile(uint16_t r, uint16_t g, uint16_t b);
+
+/* A function that lightens/darkens a color and returns the new color.
+
+Parameters:
+rgb - The original color to be brightened or darkened in svgrgb565 format
+mult - The number by which each color component of rgb is multiplied by to produce the new components for the new color. A mult < 1 will produce a 
+darkening effect while a mult > 1 will produce a lightening effect.
+
+Returns:
+The svrgb565 code for the color after it has been darkened/lightened
+*/
+uint16_t shade(uint16_t rgb,  double mult);
 
 #endif

@@ -5,7 +5,7 @@
 #include <util/delay.h>
 #include <math.h>
 #include "ili934x.h"
-#include "lcd.h"
+#include "unifiedLcd.h"
 #include "bresenham.h"
 
 

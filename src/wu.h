@@ -2,7 +2,7 @@
 #define wu_h
 #include "bresenham.h"
 #include <math.h>
-#include "colorConverter.h"
+#include "unifiedColor.h"
 
  /*{Small Graphics library for the LaFortuna}
     Copyright (C) {2016}  {Nicholas Bishop}
