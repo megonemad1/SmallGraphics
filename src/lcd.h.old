@@ -1,6 +1,10 @@
-#ifndef unifiedLcd_h
-#define unifiedLcd_h
-#include "ili934x.h"
+/*  Author: Steve Gunn
+ * Licence: This work is licensed under the Creative Commons Attribution License.
+ *           View this license at http://creativecommons.org/about/licenses/
+ */
+ #ifndef lcd_h
+ #define lcd_h
+#include "ili934x.h" 
 #include <avr/io.h>
 #include <stdint.h>
 #include "svgrgb565.h"
@@ -22,7 +26,7 @@ extern lcd display;
 typedef struct {
 	uint16_t left, right;
 	uint16_t top, bottom;
-} rectangle;
+} rectangle;	
 
 void init_lcd();
 void lcd_brightness(uint8_t i);

@@ -3,7 +3,7 @@
 #include <util/delay.h>
 #include "font.h"
 #include "ili934x.h"
-#include "lcd.h"
+#include "unifiedLcd.h"
 
 lcd display;
 
