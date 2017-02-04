@@ -1,14 +1,15 @@
 #ifndef unifiedLcd_h
 #define unifiedLcd_h
-#include "ili934x.h"
+#include <avr/interrupt.h>
 #include <avr/io.h>
+#include <math.h>
 #include <stdint.h>
+#include <util/delay.h>
+#include "ili934x.h"
 #include "unifiedColor.h"
 
 
-#include <avr/interrupt.h>
-#include <math.h>
-#include <util/delay.h>
+
 
 #define LCDWIDTH	240
 #define LCDHEIGHT	320

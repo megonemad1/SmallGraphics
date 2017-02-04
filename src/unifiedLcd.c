@@ -1,8 +1,4 @@
-#include <avr/io.h>
-#include <avr/interrupt.h>
-#include <util/delay.h>
 #include "font.h"
-#include "ili934x.h"
 #include "unifiedLcd.h"
 
 
