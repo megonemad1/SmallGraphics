@@ -5,7 +5,6 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 #include "unifiedColor.h"
-#include "bezier.h"
 
  /*{Small Graphics library for the LaFortuna}
     Copyright (C) {2016}  {Nicholas Bishop}
@@ -30,25 +29,23 @@ void init(void) {
     CLKPR = 0;
 
 	init_lcd();
-	
-	
+
+
 	display_string("hello world");
-	
+
 	drawCircle(160,120,100,YELLOW);
 	drawCircle(115, 75, 15,YELLOW);
 	drawCircle(205, 75, 15,YELLOW);
-	
+
 	uint16_t x[4] = {115, 135, 185, 205};
 	uint16_t y[4] = {165, 195, 195,165};
 	plotBezierBuffer(x,y, YELLOW, 0.1);
-	
-	
-	
+
+
+
 }
 
 int main() {
 	init();
 	return 0;
 }
-
-
