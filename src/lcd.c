@@ -2,7 +2,7 @@
  * Licence: This work is licensed under the Creative Commons Attribution License.
  *           View this license at http://creativecommons.org/about/licenses/
  *
- *  
+ *
  *  - Jan 2015  Modified for LaFortuna (Rev A, black edition) [KPZ]
  */
 
@@ -62,7 +62,7 @@ void lcd_brightness(uint8_t i) {
 void set_orientation(orientation o) {
     display.orient = o;
     write_cmd(MEMORY_ACCESS_CONTROL);
-    if (o==North) { 
+    if (o==North) {
         display.width = LCDWIDTH;
         display.height = LCDHEIGHT;
         write_data(0x48);
@@ -185,14 +185,14 @@ void clear_screen() {
 
 void display_char(char c) {
     uint16_t x, y;
-    PGM_P fdata; 
+    PGM_P fdata;
     uint8_t bits, mask;
     uint16_t sc=display.x, ec=display.x + 4, sp=display.y, ep=display.y + 7;
 
     /*   New line starts a new line, or if the end of the
          display has been reached, clears the display.
     */
-    if (c == '\n') { 
+    if (c == '\n') {
         display.x=0; display.y+=8;
         if (display.y >= display.height) { clear_screen(); }
         return;
@@ -225,7 +225,7 @@ void display_char(char c) {
 
 void display_string(char *str) {
     uint8_t i;
-    for(i=0; str[i]; i++) 
+    for(i=0; str[i]; i++)
         display_char(str[i]);
 }
 
@@ -237,7 +237,7 @@ void display_move(uint16_t x, uint16_t y) {
 void display_color(uint16_t fg, uint16_t bg) {
 	display.foreground = fg;
 	display.background = bg;
-	
+
 }
 
 void display_string_xy(char *str, uint16_t x, uint16_t y) {
