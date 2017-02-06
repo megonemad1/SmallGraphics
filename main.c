@@ -20,11 +20,9 @@
 
 void init(void) {
 
-    /* 8MHz clock, no prescaling (DS, p. 48) */
-    CLKPR = (1 << CLKPCE);
-    CLKPR = 0;
 
-	init_lcd();
+
+	init_lcd(1);
 
 display_string("\n\n           _                      \n");
 display_string("  __ _ ___| |_                    \n");

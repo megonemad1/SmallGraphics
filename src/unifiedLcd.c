@@ -4,8 +4,14 @@
 
 lcd display;
 
-void init_lcd() {
+void init_lcd(int clock_option) {
     /* Enable extended memory interface with 10 bit addressing */
+    /* 8MHz clock, no prescaling (DS, p. 48) */
+    if (clock_option==1)
+    {
+    CLKPR = (1 << CLKPCE);
+    CLKPR = 0;
+    }
     XMCRB = _BV(XMM2) | _BV(XMM1);
     XMCRA = _BV(SRE);
     DDRC |= _BV(RESET);
