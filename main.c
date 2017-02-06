@@ -22,16 +22,9 @@ void init(void) {
 
 
 
-	init_lcd(1);
+	init_lcd(0);
 
-display_string("\n\n           _                      \n");
-display_string("  __ _ ___| |_                    \n");
-display_string(" / _` / -_)  _|                   \n");
-display_string(" \\__, \\___|\\__|     _          _  \n");
-display_string(" |___/ ___ _ ___ __| |_____ __| | \n");
-display_string(" \\ V  V / '_/ -_) _| / / -_) _` | \n");
-display_string("  \\_/\\_/|_| \\___\\__|_\\_\\___\\__,_|");
-/*
+
 	drawCircle(160,120,100,YELLOW);
 	drawCircle(115, 75, 15,YELLOW);
 	drawCircle(205, 75, 15,YELLOW);
@@ -39,8 +32,12 @@ display_string("  \\_/\\_/|_| \\___\\__|_\\_\\___\\__,_|");
 	uint16_t x[4] = {115, 135, 185, 205};
 	uint16_t y[4] = {165, 195, 195,165};
 	plotBezierBuffer(x,y, YELLOW, 0.1);
-*/
 
+/*
+        rectangle r = {50,188,150,300};
+        fill_rectangle(r,BLACK);
+        rectangle r2 = {90,110,72,100};
+        fill_rectangle(r2,BLACK);
 	uint16_t l1x[4] = {50, 25, 25, 50};
 	uint16_t l1y[4] = {150, 175, 200, 225};
 	plotBezierBuffer(l1x,l1y, YELLOW, 0.1);
@@ -80,6 +77,16 @@ display_string("  \\_/\\_/|_| \\___\\__|_\\_\\___\\__,_|");
 	uint16_t l8y[4] = {225, 200, 190, 175};
 	plotBezierBuffer(l8x,l8y, YELLOW, 0.1);
     drawLine(20,175,34,171,YELLOW);
+*/
+   display_string("               __\n");
+display_string("   ____ ____  / /_\n");
+display_string("  / __ `/ _ \\/ __/\n");  
+display_string(" / /_/ /  __/ /_\n");
+display_string(" \\__, /\\___/\\___/  __\n");
+display_string("/____/_____  / /__/ /_\n");
+display_string("  / ___/ _ \\/ //_/ __/\n");
+display_string(" / /  /  __/ ,< / /_\n");
+display_string("/_/   \\___/_/|_|\\__/\n");
 }
 
 int main() {
