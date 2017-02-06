@@ -78,9 +78,10 @@ void init(void) {
 	plotBezierBuffer(l8x,l8y, YELLOW, 0.1);
     drawLine(20,175,34,171,YELLOW);
 */
+display_curser_move(100,100);
    display_string("               __\n");
 display_string("   ____ ____  / /_\n");
-display_string("  / __ `/ _ \\/ __/\n");  
+display_string("  / __ `/ _ \\/ __/\n");
 display_string(" / /_/ /  __/ /_\n");
 display_string(" \\__, /\\___/\\___/  __\n");
 display_string("/____/_____  / /__/ /_\n");

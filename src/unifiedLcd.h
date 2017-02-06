@@ -40,7 +40,7 @@ void fill_rectangle_indexed(rectangle r, uint16_t* col);
 void display_char(char c);
 void display_string(char *str);
 void display_string_xy(char *str, uint16_t x, uint16_t y);
-void display_move(uint16_t x, uint16_t y);
+void display_curser_move(uint16_t x, uint16_t y);
 void display_color(uint16_t fg, uint16_t bg);
 
 

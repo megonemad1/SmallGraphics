@@ -224,7 +224,7 @@ void display_string(char *str) {
         display_char(str[i]);
 }
 
-void display_move(uint16_t x, uint16_t y) {
+void display_curser_move(uint16_t x, uint16_t y) {
     display.x = x;
     display.y = y;
 }
