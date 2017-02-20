@@ -79,15 +79,14 @@ void init(void) {
     drawLine(20,175,34,171,YELLOW);
 */
 display_curser_move(100,100);
-   display_string("               __\n");
-display_string("   ____ ____  / /_\n");
-display_string("  / __ `/ _ \\/ __/\n");
-display_string(" / /_/ /  __/ /_\n");
-display_string(" \\__, /\\___/\\___/  __\n");
-display_string("/____/_____  / /__/ /_\n");
-display_string("  / ___/ _ \\/ //_/ __/\n");
-display_string(" / /  /  __/ ,< / /_\n");
-display_string("/_/   \\___/_/|_|\\__/\n");
+drawLine(80,155,80,90,YELLOW);
+drawAALine(100,80,90,155,YELLOW);
+
+drawLine(80,155,80,90,RED);
+drawLine(80,155,100,90,RED);
+drawLine(100,155,100,90,RED);
+
+display_string(" !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRS\nTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~");
 }
 
 int main() {
